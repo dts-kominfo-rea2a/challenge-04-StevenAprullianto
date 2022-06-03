@@ -11,8 +11,8 @@ const dates = [
 function createDate(param1, param2){
   function changeDate(){
     if(param1 != null && param2 != null){
-      const date = new Date(param1[param2]);
-      return date.getTime()/1000.0;
+      const date = new Date(param1[param2]).getTime()/1000.0;
+      return date.toString();
     }else{
       let date;
       let arrDate = [];
