@@ -8,7 +8,26 @@ const dates = [
 ];
 
 // TODO: Buatlah fungsi createDate
-const createDate = null;
+function createDate(param1, param2){
+  function changeDate(){
+    if(param1 != null && param2 != null){
+      const date = Date.parse(param1[param2]);
+      return date;
+    }else{
+      const arrDate = [];
+      
+      for (let i = 0; i < param1.length; i++) {
+        arrDate.push(Date.parse(param1[i]));
+      }
+
+      const newArrDate = arrDate.sort().join("-")
+
+      return newArrDate;
+    }
+  }
+
+  return changeDate();
+};
 
 // ! JANGAN DIMODIFIKASI
 (() => {
