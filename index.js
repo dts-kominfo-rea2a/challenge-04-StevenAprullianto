@@ -11,13 +11,14 @@ const dates = [
 function createDate(param1, param2){
   function changeDate(){
     if(param1 != null && param2 != null){
-      const date = Date.parse(param1[param2]);
-      return date;
+      const date = new Date(param1[param2]);
+      return date.getTime()/1000.0;
     }else{
-      const arrDate = [];
-      
+      let date;
+      let arrDate = [];
       for (let i = 0; i < param1.length; i++) {
-        arrDate.push(Date.parse(param1[i]));
+        date = new Date(param1[i]);
+        arrDate.push(date.getTime()/1000.0);
       }
 
       const newArrDate = arrDate.sort().join("-")
